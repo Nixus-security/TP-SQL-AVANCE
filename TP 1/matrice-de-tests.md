@@ -54,4 +54,4 @@ Les tests 3 et 4 portent sur la **même table** : c'est la colonne qui fait la d
 
 Une phrase : **parmi les quatre comptes, lequel peut encore faire quelque chose qu'il ne fera jamais — et comment le lui retireriez-vous ?**
 
-> **`stagiaire`.** Son besoin a une date de fin (le stage), mais son compte, son mot de passe et ses droits de lecture sur le catalogue et sur les adhérents (adresse, ville…) survivent à son départ, sans limite de durée. On le lui retire à la fin du stage avec `ALTER USER 'stagiaire'@'localhost' ACCOUNT LOCK;` (réversible, droits conservés), puis `DROP USER 'stagiaire'@'localhost';` après la période d'audit.
+> **`stagiaire`.** Son besoin a une date de fin (le stage), mais son compte, son mot de passe et ses droits de lecture sur le catalogue et sur les adhérents (nom, ville…) survivent à son départ, sans limite de durée. On le lui retire à la fin du stage avec `ALTER USER 'stagiaire'@'localhost' ACCOUNT LOCK;` (réversible, droits conservés), puis `DROP USER 'stagiaire'@'localhost';` après la période d'audit.

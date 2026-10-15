@@ -1,5 +1,5 @@
--- Sorties du script 01-roles-et-comptes.sql (exécution n°2, MySQL 8.4)
--- Schéma de test : colonnes de adherent supposées, voir README du rendu.
+-- Sorties du script 01-roles-et-comptes.sql (MySQL 8.4.11)
+-- Base officielle du module (Base/01-schema.sql, 02-donnees.sql, 03-volume.sql).
 
 +------------------------------------------------------------------------------------------------------+
 | Grants for app_media@localhost                                                                       |
@@ -27,16 +27,16 @@
 | GRANT SELECT, INSERT, UPDATE ON `mediatheque`.`reservation` TO `biblio_marie`@`localhost`       |
 | GRANT `role_adherents`@`%`,`role_catalogue`@`%`,`role_prets`@`%` TO `biblio_marie`@`localhost`  |
 +-------------------------------------------------------------------------------------------------+
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Grants for stagiaire@localhost                                                                                                                              |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| GRANT USAGE ON *.* TO `stagiaire`@`localhost`                                                                                                               |
-| GRANT SELECT (`actif`, `adresse`, `code_postal`, `date_inscription`, `id`, `nom`, `prenom`, `ville`) ON `mediatheque`.`adherent` TO `stagiaire`@`localhost` |
-| GRANT SELECT ON `mediatheque`.`categorie` TO `stagiaire`@`localhost`                                                                                        |
-| GRANT SELECT ON `mediatheque`.`exemplaire` TO `stagiaire`@`localhost`                                                                                       |
-| GRANT SELECT ON `mediatheque`.`ouvrage` TO `stagiaire`@`localhost`                                                                                          |
-| GRANT `role_catalogue`@`%` TO `stagiaire`@`localhost`                                                                                                       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+| Grants for stagiaire@localhost                                                                                                    |
++-----------------------------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `stagiaire`@`localhost`                                                                                     |
+| GRANT SELECT (`actif`, `date_inscription`, `id`, `nom`, `prenom`, `ville`) ON `mediatheque`.`adherent` TO `stagiaire`@`localhost` |
+| GRANT SELECT ON `mediatheque`.`categorie` TO `stagiaire`@`localhost`                                                              |
+| GRANT SELECT ON `mediatheque`.`exemplaire` TO `stagiaire`@`localhost`                                                             |
+| GRANT SELECT ON `mediatheque`.`ouvrage` TO `stagiaire`@`localhost`                                                                |
+| GRANT `role_catalogue`@`%` TO `stagiaire`@`localhost`                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------+
 +----------------------------------------------------------------------+
 | Grants for analyste@localhost                                        |
 +----------------------------------------------------------------------+
@@ -56,8 +56,6 @@
 | 'app_media'@'localhost' | adherent   | prenom           | SELECT         |
 | 'role_prets'@'%'        | exemplaire | disponible       | UPDATE         |
 | 'stagiaire'@'localhost' | adherent   | actif            | SELECT         |
-| 'stagiaire'@'localhost' | adherent   | adresse          | SELECT         |
-| 'stagiaire'@'localhost' | adherent   | code_postal      | SELECT         |
 | 'stagiaire'@'localhost' | adherent   | date_inscription | SELECT         |
 | 'stagiaire'@'localhost' | adherent   | id               | SELECT         |
 | 'stagiaire'@'localhost' | adherent   | nom              | SELECT         |

@@ -35,7 +35,7 @@ GRANT SELECT ON mediatheque.emprunt TO 'analyste'@'localhost';
 
 GRANT SELECT (id, nom, prenom, actif)
   ON mediatheque.adherent TO 'app_media'@'localhost';
-GRANT SELECT (id, nom, prenom, adresse, code_postal, ville, date_inscription, actif)
+GRANT SELECT (id, nom, prenom, ville, date_inscription, actif)
   ON mediatheque.adherent TO 'stagiaire'@'localhost';
 
 SET DEFAULT ROLE ALL TO
